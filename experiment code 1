@@ -1,0 +1,33 @@
+# experiment 1 :- operators, basic concept , database administration 
+
+# step 1
+use college
+
+# step 2
+db.students.insertOne({ rollNo: 101, name: "Arun", dept: "CSE", marks: 78, city: "Chennai" })
+
+# step 3
+db.students.insertMany([
+  { rollNo: 102, name: "Meena", dept: "ECE", marks: 85, city: "Madurai" },
+  { rollNo: 103, name: "Karthik", dept: "CSE", marks: 60, city: "Chennai" },
+  { rollNo: 104, name: "Divya", dept: "MECH", marks: 72, city: "Coimbatore" },
+  { rollNo: 105, name: "Suresh", dept: "CSE", marks: 91, city: "Trichy" }
+])
+
+# step 4
+db.students.find()
+db.students.find({ dept: "CSE" })
+
+# step 5
+db.students.updateOne({ rollNo: 103 }, { $set: { marks: 68 } })
+
+# step 6
+db.students.updateMany({ dept: "CSE" }, { $set: { semester: 3 } })
+
+# step 7
+db.students.deleteOne({ rollNo: 104 })
+
+# step 8
+db.students.countDocuments()
+
+
